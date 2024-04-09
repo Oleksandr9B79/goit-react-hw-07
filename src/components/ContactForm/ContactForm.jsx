@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useId } from "react";
-import css from "./ContactForm.module.css";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useId } from 'react';
+import css from './ContactForm.module.css';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsOps';
 
 // const phoneRegExp =
 //   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -16,20 +15,20 @@ export default function ContactForm() {
 
   const nameFieldId = useId();
   const numberFieldId = useId();
-  const initialValues = { name: "", number: "" };
+  const initialValues = { name: '', number: '' };
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .trim()
-      .min(3, "Too short!")
-      .max(50, "Too long!")
-      .required("Required"),
+      .min(3, 'Too short!')
+      .max(50, 'Too long!')
+      .required('Required'),
     number: Yup.string()
       .trim()
-      .min(3, "Too short!")
-      .max(50, "Too long!")
-      .matches(phoneRegExp, "Phone number format is 111-111-1111")
-      .required("Required"),
+      .min(3, 'Too short!')
+      .max(50, 'Too long!')
+      .matches(phoneRegExp, 'Phone number format is 111-111-1111')
+      .required('Required'),
   });
 
   function handleSubmit(values, actions) {
@@ -65,7 +64,7 @@ export default function ContactForm() {
   );
 }
 
-function FormInput({ id, type, name, placeholder = "", children }) {
+function FormInput({ id, type, name, placeholder = '', children }) {
   return (
     <div className={css.fieldContainer}>
       <label htmlFor={id}>{children}</label>

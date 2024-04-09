@@ -1,10 +1,10 @@
-import ContactForm from "./components/ContactForm/ContactForm";
-import SearchBox from "./components/SearchBox/SearchBox";
-import ContactList from "./components/ContactList/ContactList";
-import { fetchContacts } from "./redux/contactsOps";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { selectError, selectIsLoading } from "./redux/contactsSlice";
+import ContactForm from './components/ContactForm/ContactForm';
+import SearchBox from './components/SearchBox/SearchBox';
+import ContactList from './components/ContactList/ContactList';
+import { fetchContacts } from './redux/contactsOps';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { selectError, selectIsLoading } from './redux/contactsSlice';
 
 export default function App() {
   const dispatch = useDispatch();
